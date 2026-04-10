@@ -10,6 +10,7 @@
         rel="stylesheet">
     <script src="public/js/jquery-4.0.0.min.js"></script>
     <script src="public/js/register.js"></script>
+    <link rel="stylesheet" href="public/css/style.css">
 </head>
 
 <body class="container mt-5">
@@ -36,8 +37,8 @@
 
     </form>
 
-
-
+    <div id="mensaje" style="display:none;" class="alert alert-danger mt-3"></div>
+    <a href="index.php?page=login" class="btn btn-secondary mt-2">Volver al Login</a>
 </body>
 
 </html>

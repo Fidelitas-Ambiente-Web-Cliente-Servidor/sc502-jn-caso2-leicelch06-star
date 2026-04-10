@@ -47,6 +47,23 @@ class TallerController
         
         $tallerId = $_POST['taller_id'] ?? 0;
         $usuarioId = $_SESSION['id'];
-
+        
+        
+        $verificar = $this->solicitudModel->verificarExistente($usuarioId, $tallerId);
+        
+        if ($verificar) {
+            echo json_encode(['success' => false, 'error' => 'Ya solicitaste este taller']);
+            return;
+        }
+        
+   
+         $taller = $this->tallerModel->getById($tallerId);
+        if ($taller['cupo_maximo'] <= 0) {
+            echo json_encode(['success' => false, 'error' => 'No hay cupos disponibles']);
+            return;
+        }
+        
+        $resultado = $this->solicitudModel->crear($usuarioId, $tallerId);
+        echo json_encode($resultado);
     }
 }

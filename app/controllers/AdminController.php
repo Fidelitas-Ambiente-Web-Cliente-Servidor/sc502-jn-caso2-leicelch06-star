@@ -26,7 +26,7 @@ class AdminController
         require __DIR__ . '/../views/admin/solicitudes.php';
     }
     
-    // Aprobar solicitud
+
     public function aprobar()
     {
         if (!isset($_SESSION['id']) || $_SESSION['rol'] !== 'admin') {
@@ -37,7 +37,8 @@ class AdminController
         $solicitudId = $_POST['id_solicitud'] ?? 0;
         
         try {
-            
+         
+           $resultado = $this->solicitudModel->aprobar($solicitudId);
             echo json_encode(['success' => true]);
             
         } catch (Exception $e) {
@@ -59,4 +60,15 @@ class AdminController
             echo json_encode(['success' => false, 'error' => 'Error al rechazar']);
         }
     }
+    public function getSolicitudesJson()
+    {
+        if (!isset($_SESSION['id']) || $_SESSION['rol'] !== 'admin') {
+            echo json_encode([]);
+            return;
+        }
+        
+        $solicitudes = $this->solicitudModel->getAllPendientes();
+        echo json_encode($solicitudes);
+ }
+
 }

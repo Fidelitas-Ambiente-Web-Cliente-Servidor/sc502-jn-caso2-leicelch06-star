@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - Solicitudes pendientes</title>
-    <link rel="stylesheet" href="/public/css/style.css">
+     <link rel="stylesheet" href="public/css/style.css">
     <script src="public/js/jquery-4.0.0.min.js"></script>
     
 </head>
@@ -44,8 +44,8 @@
         </div>
     </main>
 
-    <div id="mensaje"></div>
-
+<div id="mensaje" style="display:none; padding: 10px; margin-top: 10px; border-radius: 5px;"></div>
+    <script src="public/js/solicitud.js"></script>
     
 </body>
 </html>

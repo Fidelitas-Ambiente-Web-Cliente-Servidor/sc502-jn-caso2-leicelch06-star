@@ -10,6 +10,7 @@
         rel="stylesheet">
     <script src="public/js/jquery-4.0.0.min.js"></script>
     <script src="public/js/auth.js"></script>
+    <link rel="stylesheet" href="public/css/style.css">
 </head>
 
 <body class="container mt-5">
@@ -35,8 +36,6 @@
         </button>
         <a href="index.php?page=registro" class="btn btn-secondary">Registrarse</a>
     </form>
-
-
 
 </body>
 

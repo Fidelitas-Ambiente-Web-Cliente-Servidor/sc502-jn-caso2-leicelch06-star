@@ -1,36 +1,35 @@
-$(function () {
-    let formRegister = $("#formRegister");
-    const urlBase = "index.php"
-
-    formRegister.on("submit", function (event) {
+$(function() {
+    $("#formRegister").on("submit", function(event) {
         event.preventDefault();
-        let username = $("#username");
-        let password = $("#password");
-
-        if (username.val() === "" || password.val() === "") {
+        
+        let username = $("#username").val();
+        let password = $("#password").val();
+        
+        if (username === "" || password === "") {
             alert("Debe completar todos los campos");
-        } else {
-            $.ajax({
-                url: urlBase,
-                type: 'POST',
-                data: $(this).serialize() + '&option=register',
-                dataType: 'json',
-                success: function (response) {
-                    if (response.response === '00') {
-                        window.location.href = 'index.php?page=talleres';
-                    } else {
-                        $('#mensaje').text(response.message).css('color', 'red').show();
-                    }
-                },
-                error: function () {
-                    $('#mensaje').text('Error de conexión').css('color', 'red').show();
-                }
-            });
-
+            return;
         }
-
-
-    })
-
-
-})
+        
+        $.ajax({
+            url: "index.php",
+            type: "POST",
+            data: {
+                username: username,
+                password: password,
+                option: "register"
+            },
+            dataType: "json",
+            success: function(response) {
+                if (response.response === "00") {
+                    alert("Registro exitoso");
+                    window.location.href = "index.php?page=login";
+                } else {
+                    $("#mensaje").text(response.message).css("color", "red").show();
+                }
+            },
+            error: function() {
+                $("#mensaje").text("Error de conexión").css("color", "red").show();
+            }
+        });
+    });
+});
