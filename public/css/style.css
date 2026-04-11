@@ -15,7 +15,7 @@ body {
     box-shadow: 0 0 15px rgba(255, 105, 180, 0.2);
 }
 
-/* NAVBAR */
+
 nav {
     background: linear-gradient(90deg, #ff69b4, #ff1493);
     color: white;
@@ -38,7 +38,7 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* TABLA */
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -62,7 +62,6 @@ table tr:hover {
     background-color: #ffe4ec;
 }
 
-/* BOTONES */
 button, .btn {
     padding: 8px 15px;
     border: none;
@@ -113,7 +112,6 @@ button, .btn {
     color: white;
 }
 
-/* FORMULARIOS */
 form input {
     width: 100%;
     padding: 10px;
@@ -129,7 +127,7 @@ form button {
     padding: 10px;
 }
 
-/* LOADER */
+
 .loader {
     text-align: center;
     color: #ff69b4;
@@ -152,9 +150,8 @@ form button {
 }
 
 
-/* COLORES PERSONALIZADOS MENSAJE */
 .alert-success {
-    background-color: #ffb6c1 !important; /* rosado claro */
+    background-color: #ffb6c1 !important; 
     color: #800040 !important;
     border: 1px solid #ff69b4;
 }
@@ -165,7 +162,6 @@ form button {
     border: 1px solid #ff1493;
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
