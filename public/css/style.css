@@ -1,7 +1,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #fff0f5; /* fondo rosado claro */
     margin: 0;
     padding: 20px;
 }
@@ -11,32 +11,34 @@ body {
     margin: 0 auto;
     background: white;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.2);
 }
 
-
+/* NAVBAR */
 nav {
-    background-color: #333;
+    background: linear-gradient(90deg, #ff69b4, #ff1493);
     color: white;
     padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     margin-right: 20px;
+    font-weight: bold;
 }
 
 nav a:hover {
     text-decoration: underline;
 }
 
+/* TABLA */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -44,7 +46,7 @@ table {
 }
 
 table th {
-    background-color: #007bff;
+    background-color: #ff69b4;
     color: white;
     padding: 10px;
     text-align: left;
@@ -57,101 +59,123 @@ table td {
 }
 
 table tr:hover {
-    background-color: #f1f1f1;
+    background-color: #ffe4ec;
 }
 
-
-
+/* BOTONES */
 button, .btn {
     padding: 8px 15px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
+    transition: 0.3s;
 }
 
 .btn-solicitar {
-    background-color: #28a745;
+    background-color: #ff69b4;
     color: white;
 }
 
 .btn-solicitar:hover {
-    background-color: #218838;
+    background-color: #ff1493;
 }
 
 .btn-aprobar {
-    background-color: #007bff;
+    background-color: #ff85c1;
     color: white;
 }
 
 .btn-aprobar:hover {
-    background-color: #0056b3;
+    background-color: #ff4da6;
 }
 
 .btn-rechazar {
-    background-color: #dc3545;
+    background-color: #ff4d6d;
     color: white;
 }
 
 .btn-rechazar:hover {
-    background-color: #c82333;
+    background-color: #e60039;
 }
 
 .btn-primary {
-    background-color: #007bff;
+    background-color: #ff69b4;
     color: white;
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: #ff1493;
 }
 
 .btn-logout {
-    background-color: #dc3545;
+    background-color: #ff4d6d;
     color: white;
 }
 
+/* FORMULARIOS */
 form input {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    border: 1px solid #ffc0cb;
+    border-radius: 6px;
 }
 
 form button {
     width: 100%;
-    background-color: #007bff;
+    background-color: #ff69b4;
     color: white;
     padding: 10px;
 }
 
+/* LOADER */
 .loader {
     text-align: center;
-    color: #666;
+    color: #ff69b4;
 }
 
 #mensaje {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    border-radius: 5px;
-    display: none;
+    display: none !important;
+    max-width: 500px;
+    margin: 20px auto !important;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 12px;
+
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    transform: none !important;
 }
 
+
+/* COLORES PERSONALIZADOS MENSAJE */
+.alert-success {
+    background-color: #ffb6c1 !important; /* rosado claro */
+    color: #800040 !important;
+    border: 1px solid #ff69b4;
+}
+
+.alert-danger {
+    background-color: #ffc0cb !important; /* rosado más fuerte */
+    color: #660033 !important;
+    border: 1px solid #ff1493;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
         text-align: center;
     }
-    
+
     nav div {
         margin-bottom: 10px;
     }
-    
+
     table th, table td {
         font-size: 12px;
         padding: 5px;
